@@ -1,0 +1,7 @@
+[
+    {
+	"directory": "test",
+	"file": "foo.c",
+	"arguments": ["gcc", "-c", "-o", "foo.o", "foo.c"]
+    }
+]
