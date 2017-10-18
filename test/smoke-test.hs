@@ -1,6 +1,7 @@
 module Main where
 
 import Data.Aeson (eitherDecode')
+import Data.Foldable (traverse_)
 import qualified Data.ByteString.Lazy as B
 
 import System.Exit (exitSuccess, exitFailure)
@@ -10,10 +11,12 @@ import Clang.CompilationDatabase
 main :: IO ()
 main = do
   let
-    f = "test/smoke-test.json"
-  (msg, result) <- smoketest f
-  putStrLn msg
-  if result then exitSuccess else exitFailure
+    f = [ "test/smoke-test.json"
+        , "test/autotool_project-compile_commands.json"
+        ]
+  (msgs, results) <- fmap unzip $ traverse smoketest f
+  traverse_ putStrLn msgs
+  if and results then exitSuccess else exitFailure
 
 smoketest :: FilePath -> IO (String, Bool)
 smoketest = \fp -> do
