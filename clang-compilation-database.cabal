@@ -21,6 +21,7 @@ category:            Language
 build-type:          Simple
 extra-source-files:  ChangeLog.md README.md
                      test/smoke-test.json
+                     test/autotool_project-compile_commands.json
 cabal-version:       >=1.10
 tested-with:         GHC == 7.10.*, GHC == 8.0.*, GHC == 8.2.*
 
