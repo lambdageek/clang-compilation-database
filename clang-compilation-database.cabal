@@ -2,7 +2,7 @@
 -- further documentation, see http://haskell.org/cabal/users-guide/
 
 name:                clang-compilation-database
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            JSON Compilation Database Format encoding and decoding
 description:         See README.md
                      .
@@ -23,13 +23,13 @@ extra-source-files:  ChangeLog.md README.md
                      test/smoke-test.json
                      test/autotool_project-compile_commands.json
 cabal-version:       >=1.10
-tested-with:         GHC == 7.10.*, GHC == 8.0.*, GHC == 8.2.*
+tested-with:         GHC == 7.10.*, GHC == 8.0.*, GHC == 8.2.*, GHC == 8.4.1
 
 library
   exposed-modules:     Clang.CompilationDatabase
   -- other-modules:       
   -- other-extensions:    
-  build-depends:       base >=4.8 && <4.11,
+  build-depends:       base >=4.8 && <4.12,
                        bytestring >=0.10.6,
                        aeson >=1.2.0.0,
                        text >=1.2.0.2
